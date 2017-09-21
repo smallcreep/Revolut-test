@@ -1,0 +1,5 @@
+allprojects {
+    test {
+        include "com/github/smallcreep/**/*ITCase.*"
+    }
+}
