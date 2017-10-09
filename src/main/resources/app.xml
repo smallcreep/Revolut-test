@@ -1,0 +1,116 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<apps>
+    <app name="Revolut">
+        <package>com.revolut.revolut.test</package>
+        <startActivity>com.revolut.ui.tutorial.TutorialActivity</startActivity>
+        <startPage>Welcome</startPage>
+        <pages>
+            <page id="Welcome">
+                <elements>
+                    <element name="skip" clickPage="Registration">
+                        <selector type="id">com.revolut.revolut.test:id/header_next</selector>
+                    </element>
+                </elements>
+            </page>
+            <page id="Registration">
+                <elements>
+                    <element name="phone number">
+                        <selector type="id">com.revolut.revolut.test:id/uic_edit_phone_number</selector>
+                    </element>
+                    <element name="next" clickPage="SetPassword">
+                        <selector type="id">com.revolut.revolut.test:id/signup_next</selector>
+                    </element>
+                </elements>
+            </page>
+            <page id="SetPassword">
+                <elements>
+                    <element name="1" clickPage="SuggestAllowContact" clickRedirect="4">
+                        <selector type="id">com.revolut.revolut.test:id/button_1</selector>
+                    </element>
+                </elements>
+            </page>
+            <page id="SuggestAllowContact">
+                <elements>
+                    <element name="not now" clickPage="Main">
+                        <selector type="id">com.revolut.revolut.test:id/uic_header_next</selector>
+                    </element>
+                </elements>
+            </page>
+            <page id="Main">
+                <elements>
+                    <element name="transfer" clickPage="TransferOptionDialog">
+                        <selector type="id">com.revolut.revolut.test:id/button_transfer</selector>
+                    </element>
+                </elements>
+            </page>
+            <page id="TransferOptionDialog">
+                <elements>
+                    <element name="to bank account" clickPage="SuggestBankTransfer">
+                        <selector type="xpath">//*[@resource-id='com.revolut.revolut.test:id/card_wrapper']/*/*[@resource-id='com.revolut.revolut.test:id/item_title'][@text='To bank account']</selector>
+                    </element>
+                </elements>
+            </page>
+            <page id="SuggestBankTransfer">
+                <elements>
+                    <element name="skip" clickPage="BankTransfer">
+                        <selector type="id">com.revolut.revolut.test:id/header_next</selector>
+                    </element>
+                </elements>
+            </page>
+            <page id="BankTransfer">
+                <elements>
+                    <element name="add new beneficiary" clickPage="SelectionTransferType">
+                        <selector type="id">com.revolut.revolut.test:id/list_add_new_item_icon</selector>
+                    </element>
+                </elements>
+            </page>
+            <page id="SelectionTransferType">
+                <elements>
+                    <element name="to myself">
+                        <selector type="xpath">//*[@resource-id='com.revolut.revolut.test:id/item_name'][@text='To myself']</selector>
+                    </element>
+                    <element name="next" clickPage="SelectionCountryCurrency">
+                        <selector type="id">com.revolut.revolut.test:id/button_next</selector>
+                    </element>
+                </elements>
+            </page>
+            <page id="SelectionCountryCurrency">
+                <elements>
+                    <element name="next" clickPage="AccountDetails">
+                        <selector type="id">com.revolut.revolut.test:id/button_next</selector>
+                    </element>
+                </elements>
+            </page>
+            <page id="AccountDetails">
+                <elements>
+                    <element name="IBAN">
+                        <selector type="id">com.revolut.revolut.test:id/server_field_0</selector>
+                    </element>
+                    <element name="BIC/SWIFT">
+                        <selector type="id">com.revolut.revolut.test:id/server_field_1</selector>
+                    </element>
+                    <element name="next" clickPage="BeneficiaryAddress">
+                        <selector type="id">com.revolut.revolut.test:id/button_next</selector>
+                    </element>
+                </elements>
+            </page>
+            <page id="BeneficiaryAddress">
+                <elements>
+                    <element name="next" clickPage="DialogCreatedBeneficiary">
+                        <selector type="id">com.revolut.revolut.test:id/button_next</selector>
+                    </element>
+                </elements>
+            </page>
+            <page id="DialogCreatedBeneficiary">
+                <elements>
+                    <element name="done">
+                        <selector type="id">com.revolut.revolut.test:id/operation_status_button</selector>
+                    </element>
+                    <element name="message">
+                        <selector type="id">com.revolut.revolut.test:id/operation_state_title</selector>
+                    </element>
+                </elements>
+            </page>
+        </pages>
+    </app>
+</apps>
