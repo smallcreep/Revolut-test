@@ -19,6 +19,23 @@ project.ext {
     junitVersion = "4.12"
 }
 
+repositories {
+    mavenCentral()
+}
+
 dependencies {
-    testCompileOnly "junit:junit:$junitVersion"
+    compile 'junit:junit:4.12'
+    compile 'io.appium:java-client:5.0.3'
+    compile 'info.cukes:cucumber-java8:1.2.5'
+    compile 'com.github.mkolisnyk:cucumber-runner:1.2'
+    compile 'org.cactoos:cactoos:0.20'
+    compile 'org.ini4j:ini4j:0.5.4'
+    compile 'com.jcabi:jcabi-xml:0.20.1'
+}
+
+test {
+    systemProperties = [
+            "hubUrl": (project.hasProperty('hubUrl') ? project.property('hubUrl') : System.getenv("hubUrl")),
+            "appPath": (project.hasProperty('appPath') ? project.property('appPath') : System.getenv("appPath"))
+    ]
 }
